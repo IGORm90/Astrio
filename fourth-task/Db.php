@@ -23,4 +23,9 @@ class Db {
             $stat->execute();
             return $stat->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function deleteData($sql, $param){
+            $stat = $this->db->prepare($sql);
+            $stat->execute([$param]);
+        }
 }

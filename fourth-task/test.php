@@ -4,6 +4,6 @@
     require 'dbBox.php';
 
     $file = DbBox::getInstance();
-    $file->setData('set3','val1');
+    $file->setData('set4','val1');
     $file->save();
 

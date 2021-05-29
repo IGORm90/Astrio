@@ -35,6 +35,7 @@
 
         //Метод сохраняющий как массив, так и скалярное значение
         public function save(){
+            $this->db->deleteData('DELETE FROM data WHERE data_key = (?)', (string)$this->key);
             if(is_array($this->value)){
                 for($i = 0; $i < count($this->value); $i++){
                     $this->db->insertData('INSERT INTO data (data_key, data_value) VALUES (?,?)', ['key' => (string)$this->key, 'value' => (string)$this->value[$i]]);
